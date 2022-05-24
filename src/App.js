@@ -99,6 +99,7 @@ function App() {
             type="text"
             placeholder="Type here"
             className="input w-full max-w-xs"
+            value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
           <button className="btn btn-accent text-white" type="submit">
