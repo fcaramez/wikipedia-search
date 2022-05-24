@@ -69,7 +69,11 @@ function App() {
         console.log(response.data.query.search);
         setQuery("");
       })
-      .catch((err) => alert(err));
+      .catch(() => {
+        if (query.length === 0) {
+          alert("Please input your search!");
+        }
+      });
   };
 
   const handleSubmit = (e) => {
