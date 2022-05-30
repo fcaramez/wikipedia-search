@@ -12,6 +12,8 @@ const RowTag = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: space-around;
 `;
 
 function App() {
@@ -21,7 +23,7 @@ function App() {
   const error = () =>
     toast.error("Please Input your Search Filter!", {
       position: "top-left",
-      autoClose: 3000,
+      autoClose: 1000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -29,17 +31,6 @@ function App() {
       progress: undefined,
     });
 
-    /* const love = () =>
-      toast("O André LOOOOOVES Toastify", {
-        position: "top-center",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      }); */
- 
   const fetchApi = () => {
     axios
       .get(
@@ -49,7 +40,6 @@ function App() {
         setData(response.data.query.search);
         console.log(response.data.query.search);
         setQuery("");
-        /* love() */
       })
       .catch(() => {
         if (query.length === 0) {
